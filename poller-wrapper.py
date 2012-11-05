@@ -23,6 +23,8 @@
  FreeBSD:       cd /usr/ports/*/py-MySQLdb && make install clean
 
  Tested on:     Python 2.7.3 / Ubuntu 12.04 LTS
+ 
+ GitHub:        https://github.com/Atrato/observium-poller-wrapper
 
 """
 
