@@ -14,12 +14,16 @@ that should run simultaneously. If no argument is given it will assume
 a default of 8 threads.
 
 In /etc/cron.d/observium replace this (or the equivalent) poller entry:
+
     */5 * * * *   root    /opt/observium/poller.php -h all >> /dev/null 2>&1
+
 with something like this:
+
     */5 * * * * root python /opt/observium/poller-wrapper.py 16 >> /dev/null 2>&1
 
-Requirements:  python, MySQLdb, Queue, subprocess
-Ubuntu Linux:  apt-get install py-mysql
-FreeBSD:       cd /usr/ports/*/py-MySQLdb && make install clean
- Tested on:     Python 2.7.3 / Ubuntu 12.04 LTS
+Requirements:
+
+    python, MySQLdb, Queue, subprocess
+
+Tested on: Python 2.7.3 / Ubuntu 12.04 LTS
 
