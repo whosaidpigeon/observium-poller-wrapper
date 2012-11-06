@@ -106,6 +106,8 @@ def poll_worker():
 poll_queue = Queue.Queue()
 print_queue = Queue.Queue()
 
+print "starting the poller at %s with %s hreads, slowest devices first" % (time.time(), amount_of_workers)
+
 for device_id in devices_list:
     poll_queue.put(device_id)
  
