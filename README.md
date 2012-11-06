@@ -25,5 +25,7 @@ Requirements:
 
     python, MySQLdb, Queue, subprocess
 
-Tested on: Python 2.7.3 / Ubuntu 12.04 LTS
+Tested on:
+	Python 2.7.3 / Ubuntu 12.04 LTS
+	Python 2.6.6 / Debian 6 (Squeeze)
 
