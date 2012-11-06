@@ -96,7 +96,7 @@ def poll_worker():
         try:
             start_time = time.time()
             command = "/usr/bin/env php %s -h %s >> /dev/null 2>&1" % (poller_path, device_id)
-            subprocess.check_call(command, shell=True, timeout=300)
+            subprocess.check_call(command, shell=True)
             elapsed_time = int(time.time() - start_time)
             print_queue.put([threading.current_thread().name, device_id, elapsed_time])
         except:
