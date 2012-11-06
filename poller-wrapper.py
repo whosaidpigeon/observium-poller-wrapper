@@ -9,7 +9,7 @@
 
  Usage:         This program accepts one command line argument: the number of threads
                 that should run simultaneously. If no argument is given it will assume
-                a default of 8 threads.
+                a default of 16 threads.
 
                 In /etc/cron.d/observium replace this (or the equivalent) poller entry:
                 */5 *     * * *   root    /opt/observium/poller.php -h all >> /dev/null 2>&1
@@ -45,12 +45,12 @@ s_time = time.time()
 
 """
     Take the amount of threads we want to run in parallel from the commandline
-    if None are given or the argument was garbage, fall back to default of 8
+    if None are given or the argument was garbage, fall back to default of 16 
 """
 try:
     amount_of_workers = int(sys.argv[1])
 except:
-    amount_of_workers = 8
+    amount_of_workers = 16
 
 devices_list = []
 
