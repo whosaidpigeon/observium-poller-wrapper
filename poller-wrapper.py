@@ -96,7 +96,7 @@ def poll_worker():
         try:
             start_time = time.time()
             command = "/usr/bin/env php %s -h %s >> /dev/null 2>&1" % (poller_path, device_id)
-            subprocess.check_call(command, shell=True)
+            subprocess.check_call(command, shell=True, timeout=600)
             elapsed_time = int(time.time() - start_time)
             print_queue.put([threading.current_thread().name, device_id, elapsed_time])
         except:
@@ -106,7 +106,7 @@ def poll_worker():
 poll_queue = Queue.Queue()
 print_queue = Queue.Queue()
 
-print "starting the poller at %s with %s hreads, slowest devices first" % (time.time(), amount_of_workers)
+print "starting the poller at %s with %s threads, slowest devices first" % (time.time(), amount_of_workers)
 
 for device_id in devices_list:
     poll_queue.put(device_id)
